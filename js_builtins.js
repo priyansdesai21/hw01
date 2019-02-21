@@ -22,16 +22,17 @@ window.builtins = {};
 builtins.trim = function(str) {
   let newStr = "";
   let indexStart = 0;
-  for (let i = 0; i < str.length + 1; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (str[i] !== " " && indexStart == 0) 
       indexStart = i;
   }
+  console.log(indexStart)
   let indexEnd = 0;
   for (let k = str.length - 1; k > 0; k--) {
     if (str[k] !== " " && indexEnd == 0) 
       indexEnd = k + 1;
   }
-  for (let g = indexStart; g < indexEnd; g++) {
+  for (let g = indexStart - 1; g < indexEnd; g++) {
       newStr += str[g];
   }
   return newStr;
