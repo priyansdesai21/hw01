@@ -24,9 +24,8 @@ builtins.trim = function(str) {
   let indexStart = 0;
   for (let i = 0; i < str.length; i++) {
     if (str[i] !== " " && indexStart == 0) 
-      indexStart = i;
+      indexStart = i + 1;
   }
-  console.log(indexStart)
   let indexEnd = 0;
   for (let k = str.length - 1; k > 0; k--) {
     if (str[k] !== " " && indexEnd == 0) 
